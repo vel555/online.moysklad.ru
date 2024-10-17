@@ -4,9 +4,16 @@ import org.testng.annotations.Test;
 
 public class AuthTest extends BaseTest{
 
-    public String loginAndPasswordFieldsAreEmptyMessage = "Чтобы войти, укажите имя пользователя и пароль";
-
     @Test
-    public void
+    public void userAuthorizationWithValidData(){
+        authPage.open();
+        authPage.inputLoginAndPassword("admin@exhewa", "V7106340m");
+        authPage.clicLoginButton();
+        homePage.clocePopupPanelIfNeedet();
+        boolean homePageOpentd = homePage.isPageOpened();
+
+        assert true(homePageOpentd);
+
+    }
 
 }

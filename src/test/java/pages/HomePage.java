@@ -4,14 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.nio.file.WatchEvent;
 
 public class HomePage extends BasePage{
 
     private static final By UPGRADE_BUTTON = By.xpath("//button[@data-test-id='home-page-upgrade-button']");
     private static final By POPUP_PANEL = By.className("lognex-popup-panel");
     private static final By POPUP_PANEL_CLOSE_BUTTON = By.xpath(
-            "//div[@class='gwt-HTML GP34G-TOT GP34G-TEU']");
+            "//button[@class='gwt-Button close-icon-dark GP34G-TKT']");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -30,7 +29,7 @@ public class HomePage extends BasePage{
     }
 
     @Override
-    protected Boolean isPageOpened(By element) {
+    public Boolean isPageOpened() {
         return isExist(UPGRADE_BUTTON);
     }
 }

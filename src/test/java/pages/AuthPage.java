@@ -12,6 +12,9 @@ public class AuthPage extends BasePage {
     public AuthPage(WebDriver driver) {
         super(driver);
     }
+    public void open(){
+        driver.get(URL);
+    }
 
 
     public void inputLoginAndPassword(String name, String password){
@@ -28,7 +31,7 @@ public class AuthPage extends BasePage {
     }
 
     @Override
-    protected Boolean isPageOpened(By element) {
-        return isPageOpened(element);
+    public Boolean isPageOpened() {
+        return isExist(SUBMIT_BUTTON);
     }
 }

@@ -11,7 +11,7 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    public static final String URL = "https://www.moysklad.ru/app";
+    public static String URL = "https://www.moysklad.ru/app";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -27,7 +27,7 @@ public abstract class BasePage {
 
     }
 
-    protected abstract Boolean isPageOpened(By element);
+    public abstract Boolean isPageOpened();
 }
 
 
