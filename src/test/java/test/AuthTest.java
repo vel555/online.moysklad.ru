@@ -1,5 +1,6 @@
 package test;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AuthTest extends BaseTest{
@@ -12,7 +13,7 @@ public class AuthTest extends BaseTest{
         homePage.clocePopupPanelIfNeedet();
         boolean homePageOpentd = homePage.isPageOpened();
 
-        assert true(homePageOpentd);
+       Assert.assertTrue(homePageOpentd);
 
     }
 
