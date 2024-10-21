@@ -1,5 +1,6 @@
 package test;
 
+import org.testng.Assert;
 import  org.testng.annotations.Test;
 
 public class HomeTest extends BaseTest{
@@ -13,6 +14,6 @@ public class HomeTest extends BaseTest{
         homePage.isPageOpened();
         boolean homePageOpened= homePage.isPageOpened();
 
-        assert true(homePageOpened);
+        Assert.assertTrue(homePageOpened);
     }
 }
