@@ -1,4 +1,4 @@
-package input;
+package elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,10 +16,7 @@ public class Input {
     }
 
     public void write(String text){
-        driver.findElement(By.xpath(String.format(inputLocator,this.label))).sendKeys(text);
-    }
-
-    public void clear(){
         driver.findElement(By.xpath(String.format(inputLocator,this.label))).clear();
+        driver.findElement(By.xpath(String.format(inputLocator,this.label))).sendKeys(text);
     }
 }

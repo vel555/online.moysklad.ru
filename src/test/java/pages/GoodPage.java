@@ -13,7 +13,7 @@ public class GoodPage extends BasePage{
     }
 
     public void open(){
-        driver.get(URL+"#good");
+        driver.get(URL+"/#good");
     }
 
     public void clikAddGootButton(){

@@ -6,16 +6,16 @@ import org.openqa.selenium.WebDriver;
 public class AuthPage extends BasePage {
     public static final By USERNAME = By.xpath("//input[@name='j_username']");
     public static final By PASSWORD = By.xpath("//input[@name='j_password']");
-    public static final By SUBMIT_BUTTON = By.id("submitButton");
+    public static final By SUBMIT_BUTTON = By.xpath("//button[@type='submit']");
     public static final By ERROR_MESSAGE = By.xpath("//div[@class='error-msg']");
 
     public AuthPage(WebDriver driver) {
         super(driver);
     }
-    public void open(){
-        driver.get(URL);
-    }
 
+    public void open(){
+        driver.get(URL+"/login");
+    }
 
     public void inputLoginAndPassword(String name, String password){
         driver.findElement(USERNAME).sendKeys(name);

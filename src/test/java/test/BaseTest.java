@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.AuthPage;
-import pages.GoodPage;
-import pages.HomePage;
+import pages.*;
 
 import java.time.Duration;
 
@@ -17,6 +15,9 @@ public abstract class BaseTest {
     AuthPage authPage;
     HomePage homePage;
     GoodPage goodPage;
+    GoodEditPage goodEditPage;
+    TopMenuPage topMenuPage;
+    UserSettingsPage userSettingsPage;
 
 
 
@@ -30,6 +31,9 @@ public abstract class BaseTest {
         authPage = new AuthPage(driver);
         homePage = new HomePage(driver);
         goodPage = new GoodPage(driver);
+        goodEditPage = new GoodEditPage(driver);
+        topMenuPage = new TopMenuPage(driver);
+        userSettingsPage = UserSettingsPage(driver);
 
     }
 
