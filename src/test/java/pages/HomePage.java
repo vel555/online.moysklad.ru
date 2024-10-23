@@ -15,7 +15,7 @@ public class HomePage extends BasePage{
 
     public void open(){
         driver.get(URL+"/app/#homepage");
-        clocePopupPanelIfNeedet();
+        closePopupPanelIfNeedet();
     }
 
     @Override

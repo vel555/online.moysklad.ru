@@ -33,7 +33,7 @@ public abstract class BaseTest {
         goodPage = new GoodPage(driver);
         goodEditPage = new GoodEditPage(driver);
         topMenuPage = new TopMenuPage(driver);
-        userSettingsPage = UserSettingsPage(driver);
+        userSettingsPage = new UserSettingsPage(driver);
 
     }
 

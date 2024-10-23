@@ -1,5 +1,6 @@
 package pages;
 
+import model.UserSettings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +24,7 @@ public abstract class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
-    public void clocePopupPanelIfNeedet(){
+    public void closePopupPanelIfNeedet(){
         WebElement popupPanel = driver.findElement(POPUP_PANEL);
         if (popupPanel.isDisplayed()){
             driver.findElement(POPUP_PANEL_CLOSE_BUTTON).click();
@@ -41,6 +42,10 @@ public abstract class BasePage {
     }
 
     public abstract Boolean isPageOpened();
+
+    public void inputUserInfo(UserSettings userSettings) {
+
+    }
 }
 
 

@@ -5,12 +5,12 @@ import  org.testng.annotations.Test;
 
 public class HomeTest extends BaseTest{
 
-    @Test
+    @Test(description = "закрыть всплывающее окно")
 
-    public void closePorupWindow(){
+    public void closePopupWindow(){
 
         homePage.open();
-        homePage.clocePopupPanelIfNeedet();
+        homePage.closePopupPanelIfNeedet();
         homePage.isPageOpened();
         boolean homePageOpened= homePage.isPageOpened();
 

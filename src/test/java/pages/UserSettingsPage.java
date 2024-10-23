@@ -1,6 +1,7 @@
 package pages;
 
 import elements.Input;
+import model.UserSettings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -10,20 +11,20 @@ public class UserSettingsPage extends BasePage {
 
     private static final By SAVE_BUTTON = By.xpath("//span[text()='сохранить']");
 
-    private static final By SYCCESS_NOTIFICATION = By.xpath("//tr[@class='dialogMiddle']//div[text()='Сотрудник сохранен']");
+    private static final By SUCCESS_NOTIFICATION = By.xpath("//tr[@class='dialogMiddle']//div[text()='Сотрудник сохранен']");
 
 
     public UserSettingsPage(WebDriver driver) {
         super(driver);
     }
 
-    public void inputUserInfo(String name, String patronymic, String lastName, String phone,String position){
+    public void inputUserInfo(UserSettings userSettings){
 
-        new Input(driver,"Имя").write(name);
-        new Input(driver,"Отчество").write(patronymic);
-        new Input(driver,"Фамилия").write(lastName);
-        new Input(driver,"Телефон").write(phone);
-        new Input(driver,"Должность").write(position);
+        new Input(driver,"Имя").write(userSettings.getName());
+        new Input(driver,"Отчество").write(userSettings.getPatronymic());
+        new Input(driver,"Фамилия").write(userSettings.getLastName());
+        new Input(driver,"Телефон").write(userSettings.getPhone());
+        new Input(driver,"Должность").write(userSettings.getPosition());
     }
 
     public void clicSaveButton(){
@@ -31,7 +32,7 @@ public class UserSettingsPage extends BasePage {
     }
 
     public boolean sussesNotificationIsVisible(){
-        return driver.findElement(SYCCESS_NOTIFICATION).isDisplayed();
+        return driver.findElement(SUCCESS_NOTIFICATION).isDisplayed();
     }
 
     @Override

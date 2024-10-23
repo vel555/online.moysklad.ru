@@ -1,23 +1,25 @@
 package test;
 
+import model.UserSettingBuilder;
+import model.UserSettings;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AuthTest extends BaseTest{
 
-    @Test
+    @Test(description = "Авторизация пользователя с помощью достоверных данных")
     public void userAuthorizationWithValidData(){
         authPage.open();
         authPage.isPageOpened();
         authPage.inputLoginAndPassword("admin@exhewa", "V7106340m");
         authPage.clicLoginButton();
-        homePage.clocePopupPanelIfNeedet();
+        homePage.closePopupPanelIfNeedet();
 
         topMenuPage.selectMenuBarOption("Настройки пользователя");
 
-        userSettingsPage.inputUserInfo("sara","ret","givi","3456789","boss");
+        UserSettings userSettings= UserSettingBuilder.get();
+        userSettingsPage.inputUserInfo(userSettings);
         userSettingsPage.clicSaveButton();
-        userSettingsPage.sussesNotificationIsVisible();
 
         Assert.assertTrue(userSettingsPage.sussesNotificationIsVisible(),"неудачно" );
 
