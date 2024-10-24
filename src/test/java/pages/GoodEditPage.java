@@ -1,6 +1,7 @@
 package pages;
 
 import elements.Input;
+import model.AddGood;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -18,12 +19,12 @@ public class GoodEditPage extends BasePage{
         driver.get(URL="/#good/edit?new&type=Good");
     }
 
-    public void writeIntoInput(){
-        new Input(driver,"Артикул").write("123");
-        new Input(driver,"Внешний код").write("456");
-        new Input(driver,"Код").write("789");
-        new Input(driver,"Вес").write("10");
-        new Input(driver,"Объем").write("5");
+    public void writeIntoInput(AddGood addGood){
+        new Input(driver,"Артикул").write(addGood.getItem());
+        new Input(driver,"Внешний код").write(addGood.getExternalCode());
+        new Input(driver,"Код").write(addGood.getCode());
+        new Input(driver,"Вес").write(addGood.getWeight());
+        new Input(driver,"Объем").write(addGood.getVolume());
     }
 
     @Override
