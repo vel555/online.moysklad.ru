@@ -7,6 +7,11 @@ public class HomeTest extends BaseTest{
 
     @Test(description = "закрыть всплывающее окно")
 
+    public void dependsOn() {
+        throw new NullPointerException();
+    }
+
+
     public void closePopupWindow(){
 
         homePage.open();

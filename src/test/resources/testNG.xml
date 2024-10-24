@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Test suite" parallel="classes">
+    <test name="test 1">
+        <classes>
+            <class name="test.AuthTest"/>
+            <parameter name="password" value="V7106340m"></parameter>
+            <parameter name="name" value="admin@exhewa"></parameter>
+        </classes>
+    </test> <!-- Test -->
+    <test name="test 2">
+        <classes>
+            <class name="test.HomeTest"/>
+            <class name="test.SetupUserTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite>

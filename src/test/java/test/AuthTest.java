@@ -3,11 +3,13 @@ package test;
 import model.UserSettingBuilder;
 import model.UserSettings;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class AuthTest extends BaseTest{
-
-    @Test(description = "Авторизация пользователя с помощью достоверных данных")
+    @Parameters({"name", "password"})
+    @Test(description = "Авторизация пользователя с помощью достоверных данных"
+            ,retryAnalyzer = Retry.class)
     public void userAuthorizationWithValidData(){
         authPage.open();
         authPage.isPageOpened();
