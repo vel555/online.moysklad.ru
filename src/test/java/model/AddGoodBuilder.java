@@ -9,11 +9,11 @@ public class AddGoodBuilder {
     public static AddGood get(){
 
         return AddGood.builder()
-                .Item(faker.number().randomNumber(8))
-                .ExternalCode(faker.number().randomNumber(6))
-                .Code(faker.number().randomNumber(5))
-                .Weight(faker.number().randomNumber(2))
-                .Volume(faker.number().randomNumber(2))
+                .item(faker.number().digits(8))
+                .externalCode(faker.number().digits(6))
+                .code(faker.number().digits(5))
+                .weight(faker.number().digits(2))
+                .volume(faker.number().digits(3))
                 .build();
     }
 }

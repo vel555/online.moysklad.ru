@@ -2,8 +2,6 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.IRetryAnalyzer;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
@@ -22,29 +20,6 @@ public abstract class BaseTest {
     TopMenuPage topMenuPage;
     UserSettingsPage userSettingsPage;
 
-    public class Retry implements IRetryAnalyzer {
-
-        private int attempt = 1;
-        private static final int MAX_RETRY = 3;
-
-        @Override
-        public boolean retry(@org.jetbrains.annotations.NotNull ITestResult iTestResult) {
-            if (!iTestResult.isSuccess()) {
-                if (attempt < MAX_RETRY) {
-                    attempt++;
-                    iTestResult.setStatus(ITestResult.FAILURE);
-                    System.out.println("Retrying once again");
-                    return true;
-                } else {
-                    iTestResult.setStatus(ITestResult.FAILURE);
-                }
-            } else {
-                iTestResult.setStatus(ITestResult.SUCCESS);
-            }
-            return false;
-        }
-
-    }
 
     @BeforeClass
     public void setUp(@Optional("chrome")String browser) {

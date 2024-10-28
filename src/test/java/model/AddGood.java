@@ -10,9 +10,9 @@ import lombok.Data;
 
 public class AddGood {
 
-    private String Item;
-    private String ExternalCode;
-    private String Code;
-    private String Weight;
-    private String Volume;
+    private String item;
+    private String externalCode;
+    private String code;
+    private String weight;
+    private String volume;
 }

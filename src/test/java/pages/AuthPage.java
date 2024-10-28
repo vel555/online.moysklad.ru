@@ -22,6 +22,12 @@ public class AuthPage extends BasePage {
         driver.findElement(PASSWORD).sendKeys(password);
     }
 
+    public void login(String name, String password){
+        open();
+        inputLoginAndPassword(name, password);
+        clicLoginButton();
+    }
+
     public void clicLoginButton(){
         driver.findElement(SUBMIT_BUTTON).click();
     }

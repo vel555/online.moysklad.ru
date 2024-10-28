@@ -14,9 +14,8 @@ public class HomeTest extends BaseTest{
 
     public void closePopupWindow(){
 
-        homePage.open();
+        authPage.login("admin@exhewa", "V7106340m");
         homePage.closePopupPanelIfNeedet();
-        homePage.isPageOpened();
         boolean homePageOpened= homePage.isPageOpened();
 
         Assert.assertTrue(homePageOpened);

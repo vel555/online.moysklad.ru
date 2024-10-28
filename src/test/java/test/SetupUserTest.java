@@ -8,16 +8,17 @@ import org.testng.annotations.Test;
 public class SetupUserTest extends BaseTest {
 
     @Test(description = "Пользователь должен установить свои настройки")
-
     public void userShouldBeSetUpHisSettings(){
 
-        authPage.inputLoginAndPassword("admin@exhewa", "V7106340m")
-                .closePopupPanelIfNeedet();
+        authPage.open();
+        authPage.inputLoginAndPassword("admin@exhewa", "V7106340m");
+        authPage.clicLoginButton();
+        authPage.closePopupPanelIfNeedet();
         topMenuPage.selectMenuBarOption("Настройки пользователя");
 
         UserSettings userSettings= UserSettingBuilder.get();
-        boolean b =userSettingsPage.inputUserInfo(userSettings)
-                .sussesNotificationIsVisible();
+        userSettingsPage.inputUserInfo(userSettings);
+        boolean b = userSettingsPage.sussesNotificationIsVisible();
 
         Assert.assertTrue(b);
     }
