@@ -8,8 +8,7 @@ import org.testng.annotations.Test;
 
 public class AuthTest extends BaseTest{
     @Parameters({"name", "password"})
-    @Test(description = "Авторизация пользователя с помощью достоверных данных"
-            ,retryAnalyzer = Retry.class)
+    @Test(description = "Авторизация пользователя с помощью достоверных данных")
     public void userAuthorizationWithValidData(){
         authPage.open();
         authPage.isPageOpened();
