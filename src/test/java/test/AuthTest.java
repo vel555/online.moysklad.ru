@@ -22,7 +22,7 @@ public class AuthTest extends BaseTest{
         userSettingsPage.inputUserInfo(userSettings);
         userSettingsPage.clicSaveButton();
 
-        Assert.assertTrue(userSettingsPage.sussesNotificationIsVisible(),"неудачно" );
+        Assert.assertTrue(userSettingsPage.sussesNotificationIsVisible(),"неудачная авторизация" );
 
     }
 
