@@ -3,8 +3,9 @@ package test;
 import model.UserSettingBuilder;
 import model.UserSettings;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+@Listeners
 public class SetupUserTest extends BaseTest {
 
     @Test(description = "Пользователь должен установить свои настройки")

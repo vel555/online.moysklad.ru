@@ -24,9 +24,9 @@ public class AuthPage extends BasePage {
     @Step("Ввести логин и пароль")
     public void inputLoginAndPassword(String name, String password){
         driver.findElement(USERNAME).sendKeys(name);
-        log.info("Ввести имя пользователя"+name);
+        log.info("Ввести имя пользователя" +name);
         driver.findElement(PASSWORD).sendKeys(password);
-        log.info("Ввести пароль"+password);
+        log.info("Ввести пароль" +password);
     }
 
     public void login(String name, String password){
@@ -38,6 +38,7 @@ public class AuthPage extends BasePage {
     @Step("Нажать кнопку регистрации")
     public void clicLoginButton(){
         driver.findElement(SUBMIT_BUTTON).click();
+        log.info("Нажать кнопку регистрации");
     }
 
     public String getErrorMessage(){

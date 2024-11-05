@@ -13,7 +13,8 @@ public class HomeTest extends BaseTest{
 
 
     public void closePopupWindow(){
-
+        authPage.open();
+        authPage.isPageOpened();
         authPage.login("admin@exhewa", "V7106340m");
         homePage.closePopupPanelIfNeedet();
         boolean homePageOpened= homePage.isPageOpened();
