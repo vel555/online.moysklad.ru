@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import model.UserSettings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    public static String URL = "https://www.moysklad.ru";
+    public static String URL = "https://online.moysklad.ru/";
 
     private static final By POPUP_PANEL = By.className("lognex-popup-panel");
 
@@ -24,6 +25,8 @@ public abstract class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
+
+    @Step("закрыть попуп панель")
     public void closePopupPanelIfNeedet(){
         WebElement popupPanel = driver.findElement(POPUP_PANEL);
         if (popupPanel.isDisplayed()){

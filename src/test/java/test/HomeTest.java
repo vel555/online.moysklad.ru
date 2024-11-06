@@ -2,6 +2,7 @@ package test;
 
 import org.testng.Assert;
 import  org.testng.annotations.Test;
+import pages.BasePage;
 
 public class HomeTest extends BaseTest{
 
@@ -15,8 +16,8 @@ public class HomeTest extends BaseTest{
     public void closePopupWindow(){
         authPage.open();
         authPage.isPageOpened();
-        authPage.login("admin@exhewa", "V7106340m");
-        homePage.closePopupPanelIfNeedet();
+        authPage.login("admin@varay54249", "V7106340m");
+        basePage.closePopupPanelIfNeedet();
         boolean homePageOpened= homePage.isPageOpened();
 
         Assert.assertTrue(homePageOpened);

@@ -12,7 +12,7 @@ public class SetupUserTest extends BaseTest {
     public void userShouldBeSetUpHisSettings(){
 
         authPage.open();
-        authPage.inputLoginAndPassword("admin@exhewa", "V7106340m");
+        authPage.inputLoginAndPassword("admin@varay54249", "V7106340m");
         authPage.clicLoginButton();
         authPage.closePopupPanelIfNeedet();
         topMenuPage.selectMenuBarOption("Настройки пользователя");

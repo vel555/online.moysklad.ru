@@ -14,6 +14,7 @@ import java.time.Duration;
 public abstract class BaseTest {
     protected WebDriver driver;
 
+    BasePage basePage;
     AuthPage authPage;
     HomePage homePage;
     GoodPage goodPage;
@@ -33,6 +34,12 @@ public abstract class BaseTest {
         goodEditPage = new GoodEditPage(driver);
         topMenuPage = new TopMenuPage(driver);
         userSettingsPage = new UserSettingsPage(driver);
+        basePage = new BasePage(driver) {
+            @Override
+            public Boolean isPageOpened() {
+                return true;
+            }
+        };
 
     }
 

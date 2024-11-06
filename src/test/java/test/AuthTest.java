@@ -13,9 +13,8 @@ public class AuthTest extends BaseTest{
     public Object[][] inputForITechTask() {
         return new Object[][]{
                 {"", "V7106340m"},
-                {"admin@exhewa", ""},
+                {"admin@varay54249", ""},
                 {"", ""},
-                {6, 5},
                 {"Имя", "Пароль"},
         };
     }
@@ -24,7 +23,7 @@ public class AuthTest extends BaseTest{
     public void userAuthorizationWithValidData(){
         authPage.open();
         authPage.isPageOpened();
-        authPage.inputLoginAndPassword("admin@exhewa", "V7106340m");
+        authPage.inputLoginAndPassword("admin@varay54249", "V7106340m");
         authPage.clicLoginButton();
         homePage.closePopupPanelIfNeedet();
 
@@ -45,7 +44,7 @@ public class AuthTest extends BaseTest{
         authPage.inputLoginAndPassword(name,pass);
         authPage.clicLoginButton();
 
-        Assert.assertFalse(homePage.open(),"баг авторизации");
+        Assert.assertTrue(authPage.getErrorMessage(), "пропуск авторизации с невалидными данными");
     }
 
 
