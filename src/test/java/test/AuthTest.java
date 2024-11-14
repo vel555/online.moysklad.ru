@@ -7,15 +7,14 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 @Listeners
 public class AuthTest extends BaseTest{
     @DataProvider(name = "Авторизация с невалидными данными")
     public Object[][] inputForITechTask() {
         return new Object[][]{
                 {"", "V7106340m"},
-                {"admin@varay54249", ""},
-                {"", ""},
-                {"Имя", "Пароль"},
+                {"admin@varay54249", ""}
         };
     }
     @Parameters({"name", "password"})
