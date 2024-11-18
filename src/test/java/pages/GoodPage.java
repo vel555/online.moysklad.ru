@@ -16,11 +16,13 @@ public class GoodPage extends BasePage{
         super(driver);
     }
     @Step("Открыть страницу товаров")
+
     public void open(){
         driver.get(URL+"/#good");
         log.info("открылась страница товаров");
     }
     @Step("Нажать кнопку добавить товар")
+
     public void clikAddGootButton(){
         driver.findElement(ADD_GOOD_BUTTON).click();
         log.info("нажалась кнопка добавить товар");

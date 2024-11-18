@@ -26,7 +26,8 @@ public abstract class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    @Step("закрыть попуп панель")
+    @Step("Закрыть попуп панель")
+
     public void closePopupPanelIfNeedet(){
         WebElement popupPanel = driver.findElement(POPUP_PANEL);
         if (popupPanel.isDisplayed()){

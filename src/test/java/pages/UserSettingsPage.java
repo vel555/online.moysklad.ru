@@ -27,7 +27,7 @@ public class UserSettingsPage extends BasePage {
         super(driver);
     }
 
-    @Step("ввод данных пользователя")
+    @Step("Ввод данных пользователя")
     public void inputUserInfo(UserSettings userSettings){
 
         new Input(driver,"Имя").write(userSettings.getName());
@@ -37,12 +37,13 @@ public class UserSettingsPage extends BasePage {
         new Input(driver,"Должность").write(userSettings.getPosition());
     }
 
-    @Step("нажать кнопку сохранить данные пользователя")
+    @Step("Нажать кнопку сохранить данные пользователя")
     public void clicSaveButton(){
         driver.findElement(SAVE_BUTTON).click();
     }
 
-    @Step("сообщение об успешном сохранении сотрудника")
+    @Step("Сообщение об успешном сохранении сотрудника")
+
     public boolean sussesNotificationIsVisible() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
         try {
@@ -53,6 +54,7 @@ public class UserSettingsPage extends BasePage {
         }
     }
     @Override
+
     public Boolean isPageOpened() {
         return isExist(CHANGE_PASSWORD_BUTTON);
     }

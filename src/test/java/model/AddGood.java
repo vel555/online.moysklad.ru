@@ -10,6 +10,7 @@ import lombok.Data;
 
 public class AddGood {
 
+    private String productName;
     private String item;
     private String externalCode;
     private String code;

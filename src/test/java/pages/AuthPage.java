@@ -16,20 +16,23 @@ public class AuthPage extends BasePage {
         super(driver);
     }
     @Step("Открыть страницу авторизации")
+
     public void open(){
         log.info("Открыть страницу"+URL);
         driver.get(URL+"/app");
     }
 
     @Step("Ввод логина и пароля в поля логин и пароль")
+
     public void inputLoginAndPassword(String name, String password){
         driver.findElement(USERNAME).sendKeys(name);
-        log.info("Ввести имя пользователя" +name);
+        log.info("Ввести имя пользователя " +name);
         driver.findElement(PASSWORD).sendKeys(password);
-        log.info("Ввести пароль" +password);
+        log.info("Ввести пароль " +password);
     }
 
-    @Step("авторизация вводом логина и пароля с нажатием кнопки входа")
+    @Step("Авторизация вводом логина и пароля с нажатием кнопки входа")
+
     public void login(String name, String password){
         open();
         inputLoginAndPassword(name, password);
@@ -37,17 +40,20 @@ public class AuthPage extends BasePage {
     }
 
     @Step("Нажать кнопку регистрации")
+
     public void clicLoginButton(){
         driver.findElement(SUBMIT_BUTTON).click();
         log.info("Нажать кнопку регистрации");
     }
 
     @Step("Получение ошибки при вводе невалидных данных")
+
     public boolean getErrorMessage(){
        return driver.findElement(ERROR_MESSAGE).isDisplayed();
     }
 
     @Override
+
     public Boolean isPageOpened() {
         return isExist(SUBMIT_BUTTON);
     }

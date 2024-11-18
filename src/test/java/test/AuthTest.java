@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 @Listeners
 public class AuthTest extends BaseTest{
     @DataProvider(name = "Авторизация с невалидными данными")
+
     public Object[][] inputForITechTask() {
         return new Object[][]{
                 {"", "V7106340m"},
@@ -19,6 +20,7 @@ public class AuthTest extends BaseTest{
     }
     @Parameters({"name", "password"})
     @Test(description = "Авторизация пользователя с помощью достоверных данных")
+
     public void userAuthorizationWithValidData(){
         authPage.open();
         authPage.isPageOpened();
@@ -37,6 +39,7 @@ public class AuthTest extends BaseTest{
     }
 
     @Test(dataProvider = "Авторизация с невалидными данными")
+
     public void invalidAuthorization(String name, String pass) {
         authPage.open();
         authPage.isPageOpened();

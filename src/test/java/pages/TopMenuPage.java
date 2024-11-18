@@ -17,7 +17,8 @@ public class TopMenuPage extends BasePage {
         super(driver);
     }
 
-    @Step("открыть меню бар и ввести название нужной строки")
+    @Step("Открыть меню бар и ввести название нужной строки")
+
     public void selectMenuBarOption(String option){
         driver.findElement(MENU_USERNAME).click();
         log.info("открылся меню бар");
@@ -26,6 +27,7 @@ public class TopMenuPage extends BasePage {
     }
 
     @Override
+
     public Boolean isPageOpened() {
         return isExist(MENU_USERNAME);
     }

@@ -2,6 +2,7 @@ package pages;
 
 import elements.Input;
 import io.qameta.allure.Step;
+import lombok.SneakyThrows;
 import model.AddGood;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,19 +19,26 @@ public class GoodEditPage extends BasePage{
 
     public static final By PRODUCT_CREATED = By.xpath("//div[text()='Товар создан']");
 
+    public static final By PRODUCT_NAME = By.xpath(
+            "//tr[@class='good-title-field entity-title-field tutorial-stage-sales-fourth-step tutorial-2-product-4']//input[@class='gwt-TextBox field b-validation-field']");
+
 
     public GoodEditPage(WebDriver driver) {
         super(driver);
     }
 
-    @Step("открыть страницу товара")
+    @Step("Открыть страницу товара")
+
     public void open(){
         driver.get(URL="/#good/edit?new&type=Good");
         log.info("открылась страница товара");
     }
 
-    @Step("заполнить страницу с товаром")
+    @SneakyThrows
+    @Step("Заполнить страницу с товаром")
+
     public void writeIntoInput(AddGood addGood){
+        driver.findElement(PRODUCT_NAME).sendKeys(addGood.getProductName());
         new Input(driver,"Артикул").write(addGood.getItem());
         new Input(driver,"Внешний код").write(addGood.getExternalCode());
         new Input(driver,"Код").write(addGood.getCode());
@@ -39,13 +47,15 @@ public class GoodEditPage extends BasePage{
         log.info("заполнились поля товара");
     }
 
-    @Step("кнопка сохранить товар")
+    @Step("Кнопка сохранить товар")
+
     public void setSaveItemButton(){
         driver.findElement(SAVE_ITEM_BUTTON).click();
         log.info("товар сохранен");
     }
 
-    @Step("сообщение продукт создан")
+    @Step("Сообщение продукт создан")
+
     public boolean setProductCreated(){
         driver.findElement(PRODUCT_CREATED).isDisplayed();
         log.info("продукт создан");
@@ -53,6 +63,7 @@ public class GoodEditPage extends BasePage{
     }
 
     @Override
+
     public Boolean isPageOpened() {
         return isExist(ITEM_NAME_LABEL_INPUT);
     }

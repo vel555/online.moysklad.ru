@@ -16,7 +16,8 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
-    @Step("открыть основную страницу с закрытием попуп панели")
+    @Step("Открыть основную страницу с закрытием попуп панели")
+
     public boolean open(){
         driver.get(URL+"/app/#homepage");
         log.info("открылась основная страница");
@@ -26,6 +27,7 @@ public class HomePage extends BasePage{
     }
 
     @Override
+
     public Boolean isPageOpened() {
         return isExist(UPGRADE_BUTTON);
     }
