@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class GoodTest extends BaseTest{
 
-    @Test(description = "вход на страницу товаров")
+    @Test(description = "Вход на страницу товаров с заполнением данных о товаре и его сохранении")
 
     public void productPageEntry(){
         authPage.login("admin@varay54249", "V7106340m");

@@ -6,7 +6,7 @@ import pages.BasePage;
 
 public class HomeTest extends BaseTest{
 
-    @Test(description = "закрыть всплывающее окно")
+    @Test(description = "Авторизация в программе и закрыть всплывающее окно")
 
     public void dependsOn() {
         throw new NullPointerException();

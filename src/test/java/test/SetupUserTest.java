@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 @Listeners
 public class SetupUserTest extends BaseTest {
 
-    @Test(description = "Пользователь должен установить свои настройки")
+    @Test(description = "Пользователь устанавливает свои настройки")
 
     public void userShouldBeSetUpHisSettings(){
 
